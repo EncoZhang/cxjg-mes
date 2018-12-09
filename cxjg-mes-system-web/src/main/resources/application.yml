@@ -1,0 +1,18 @@
+server:
+  port: 8765
+
+spring:
+  dubbo:
+      application:            #应用配置，用于配置当前应用信息，不管该应用是提供者还是消费者。
+        name: Provide
+      registry:                 #注册中心配置，用于配置连接注册中心相关信息。
+        address: zookeeper://47.99.150.208:2181
+  redis:
+    host: 47.99.150.208
+    port: 6379
+    password: 123456
+mybatis:
+  mapper-locations: classpath:com/cxjg/mes/mapper/*/*.xml  #注意：一定要对应mapper映射xml文件的所在路径
+  type-aliases-package: com.cxjg.mes.domain.*
+logging:
+  config: classpath:logging-config.xml

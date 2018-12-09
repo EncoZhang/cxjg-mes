@@ -1,0 +1,28 @@
+server:
+  port: 8766
+
+spring:
+  datasource:
+    url: jdbc:mysql://47.99.150.208:3306/iemes_v1?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+      host: 47.99.150.208
+      port: 6379
+      password: 123456
+  dubbo:
+      application:
+        name: Provide
+      registry:
+        address: zookeeper://47.99.150.208:2181
+logging:
+  config: classpath:logging-config.xml
+
+#pagehelper
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
+    returnPageInfo: check
